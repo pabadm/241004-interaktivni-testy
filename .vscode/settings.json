@@ -1,0 +1,11 @@
+{
+  "files.associations": {
+    "*.py": "python",
+    "*.html": "html",
+    "*.txt": "yaml",
+    "iostream": "cpp",
+    "*.tcc": "cpp",
+    "fstream": "cpp",
+    "iosfwd": "cpp"
+  }
+}

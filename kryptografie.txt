@@ -1,0 +1,9 @@
+Vypočítejte eulerovu funkci z čísla 10
+odpověď je číslo
+4
+Vypočítejte 6^0mod40.
+odpověď je číslo
+1
+Otestujte Fermatovým testem číslo 57 pomocí základu 3
+odpověď je true/false
+true
