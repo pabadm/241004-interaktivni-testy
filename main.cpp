@@ -17,7 +17,5 @@ int main()
         cout << "registrace byla projdena nepravidelne\n";
         return 1;
     }
-
-    // test("../kryptografie.txt");
     menu();
 }

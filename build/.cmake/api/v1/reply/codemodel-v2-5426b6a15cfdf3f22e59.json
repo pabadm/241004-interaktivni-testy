@@ -301,8 +301,8 @@
 	"kind" : "codemodel",
 	"paths" : 
 	{
-		"build" : "/media/general_partition/MANJ_Desktop/PROG1/project/build",
-		"source" : "/media/general_partition/MANJ_Desktop/PROG1/project"
+		"build" : "/media/general_partition/MANJ_Desktop/PROG1/241004-interaktivni-testy/build",
+		"source" : "/media/general_partition/MANJ_Desktop/PROG1/241004-interaktivni-testy"
 	},
 	"version" : 
 	{

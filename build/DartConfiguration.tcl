@@ -4,8 +4,8 @@
 
 
 # Configuration directories and files
-SourceDirectory: /media/general_partition/MANJ_Desktop/PROG1/project
-BuildDirectory: /media/general_partition/MANJ_Desktop/PROG1/project/build
+SourceDirectory: /media/general_partition/MANJ_Desktop/PROG1/241004-interaktivni-testy
+BuildDirectory: /media/general_partition/MANJ_Desktop/PROG1/241004-interaktivni-testy/build
 
 # Where to place the cost data store
 CostDataFile: 
@@ -26,8 +26,8 @@ SubmitURL: http://
 NightlyStartTime: 00:00:00 EDT
 
 # Commands for the build/test/submit cycle
-ConfigureCommand: "/usr/bin/cmake" "/media/general_partition/MANJ_Desktop/PROG1/project"
-MakeCommand: /usr/bin/cmake --build . --config "${CTEST_CONFIGURATION_TYPE}" -- -i
+ConfigureCommand: "/usr/bin/cmake" "/media/general_partition/MANJ_Desktop/PROG1/241004-interaktivni-testy"
+MakeCommand: /usr/bin/cmake --build . --config "${CTEST_CONFIGURATION_TYPE}"
 DefaultCTestConfigurationType: Release
 
 # version control
@@ -44,7 +44,7 @@ SVNOptions:
 SVNUpdateOptions: 
 
 # Git options
-GITCommand: 
+GITCommand: /usr/bin/git
 GITInitSubmodules: 
 GITUpdateOptions: 
 GITUpdateCustom: 
@@ -57,9 +57,9 @@ P4UpdateOptions:
 P4UpdateCustom: 
 
 # Generic update command
-UpdateCommand: 
+UpdateCommand: /usr/bin/git
 UpdateOptions: 
-UpdateType: 
+UpdateType: git
 
 # Compiler info
 Compiler: /usr/bin/c++
