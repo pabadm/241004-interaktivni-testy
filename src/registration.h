@@ -11,7 +11,8 @@ struct USER
   string surname;
   int age;
   int sex;
+  int isRegisteredINT;
 };
 void writeToUsers(string filepath, USER user);
 int isRegistered(string filepath, USER user);
-int registration(string filepath);
+struct USER registration(string filepath);

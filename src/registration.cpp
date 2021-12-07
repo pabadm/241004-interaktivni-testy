@@ -1,7 +1,5 @@
 #include "registration.h"
 
-USER user;
-
 void writeToUsers(string filepath, USER user, string password)
 {
   ofstream users;
@@ -56,8 +54,9 @@ int isRegistered(string filepath, USER user)
   return isRegisteredINT;
 }
 
-int registration(string filepath)
+struct USER registration(string filepath)
 {
+  USER user;
   string name, surname, password;
   int age, sex;
 
@@ -71,14 +70,16 @@ int registration(string filepath)
   if (age <= 0)
   {
     cout << "byl zadan nepravidelni vek \n";
-    return 1; //chyba
+    user.isRegisteredINT = 1; //chyba
+    return user;
   }
   cout << "zadejte pohlavi\n muz - 1 zena - 2\n>";
   cin >> sex;
   if (sex != 1 && sex != 2)
   {
     cout << "pohlavi bylo zadano nepravidelne \n";
-    return 1; //chyba
+    user.isRegisteredINT = 1; //chyba
+    return user;
   }
   /// z pAVlo do Pavlo
   boost::to_lower(name);
@@ -95,8 +96,10 @@ int registration(string filepath)
 
   if (isRegisteredINT == 1)
   {
-    return 0; // bez chyb
+    user.isRegisteredINT = 0; // bez chyb
+    return user;
   }
+
   else if (isRegisteredINT == 0)
   {
     cout << "zadejte heslo\n>";
@@ -104,10 +107,12 @@ int registration(string filepath)
   }
   else if (isRegisteredINT == 2)
   {
-    return 2;
+    user.isRegisteredINT = 2;
+    return user;
   }
 
   writeToUsers(filepath, user, password);
 
-  return 0; //bez chyb
+  user.isRegisteredINT = 0; //bez chyb
+  return user;
 }

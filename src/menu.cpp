@@ -1,6 +1,7 @@
 #include "menu.h"
 #include "test.cpp"
 #include <ctype.h>
+// #include "registration.h"    cout << user.name << " " << user.surname << " " << user.age << " " << user.sex;
 
 void chooseTest()
 {
