@@ -1,4 +1,7 @@
 #include <iostream>
+#include <fstream>
+#include <boost/algorithm/string.hpp>
+
 using namespace std;
 
 struct testResults

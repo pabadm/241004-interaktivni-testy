@@ -1,7 +1,6 @@
-#include <iostream>
-using namespace std;
-
+#include "menu.h"
 #include "test.cpp"
+#include <ctype.h>
 
 void chooseTest()
 {
@@ -9,26 +8,33 @@ void chooseTest()
   {
     int number = 0;
     cout << "---------------------\n";
-    cout << "1)kryptografie\n";
-    cout << "2)///////\n";
+    cout << "1)Kryptografie\n";
+    cout << "2)Římské číslice\n";
+    cout << "3)///////\n";
     cout << "9)GO BACK\n";
     cout << "---------------------\n>";
     cin >> number;
     switch (number)
     {
     case 1:
-      test("../kryptografie.txt");
+      test("../tests/kryptografie.txt");
       break;
     case 2:
+      test("../tests/romanNums.txt");
+      break;
+    case 3:
       cout << "neni pristupne\n";
       break;
     case 9:
       return;
       break;
     default:
-      cout << "error\n";
+      cout << "ERROR\n";
       break;
     }
+    cout << "---------------------\n>1)continue?\n>";
+    cin >> number;
+    return;
   }
 }
 
@@ -54,7 +60,8 @@ void menu()
       return;
       break;
     default:
-      cout << "error\n";
+      cout << "ERROR\n";
+      return;
       break;
     }
   }

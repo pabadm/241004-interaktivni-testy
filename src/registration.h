@@ -1,4 +1,8 @@
 #include <iostream>
+#include <fstream>
+#include <ctype.h>
+#include <boost/algorithm/string.hpp>
+
 using namespace std;
 
 struct USER
@@ -8,4 +12,6 @@ struct USER
   int age;
   int sex;
 };
+void writeToUsers(string filepath, USER user);
+int isRegistered(string filepath, USER user);
 int registration(string filepath);

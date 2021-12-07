@@ -1,0 +1,30 @@
+Zapiš tohle číslo jako římské: 88
+Odpověď je římské číslo
+LXXXVIII
+Zapiš tohle číslo jako římské: 99
+Odpověď je římské číslo
+XCIX
+Jaké je to římské číslo: C
+Odpověď je číslo
+100
+Zapiš tohle číslo jako římské: 95
+Odpověď je římské číslo
+XCV
+Zapiš tohle číslo jako římské: 100
+Odpověď je římské číslo
+C
+Jaké je to římské číslo: LIX
+Odpověď je číslo
+59
+Jaké je to římské číslo: LXXV
+Odpověď je číslo
+75
+Zapiš tohle číslo jako římské: 55
+Odpověď je římské číslo
+LV
+Jaké je to římské číslo: LXI
+Odpověď je číslo
+61
+Jaké je to římské číslo: XXII
+Odpověď je číslo
+22

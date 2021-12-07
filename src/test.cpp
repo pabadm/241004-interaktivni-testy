@@ -1,5 +1,4 @@
 #include "test.h"
-#include <fstream>
 
 struct testResults test(string filepath)
 {
@@ -10,16 +9,17 @@ struct testResults test(string filepath)
 
   for (int i = 1; i != 0;)
   {
-    cout << "-------------------------\n";
+    cout << "---------------------\n";
     getline(file, question);
-    if (question == "\0")
+    if (question == "\0" || file.eof())
       break;
     getline(file, howToAnswer);
     getline(file, rightAnswer);
     cout << question << "\n"
          << howToAnswer << "\n>";
     cin >> userAnswer;
-    if (userAnswer == rightAnswer)
+
+    if (boost::to_lower_copy(userAnswer) == boost::to_lower_copy(rightAnswer))
     {
       result.rightAnswers += 1;
       // cout << "spravne\n";
@@ -33,6 +33,5 @@ struct testResults test(string filepath)
 
   cout << "spravne odpovedi: " << result.rightAnswers << "\n";
   cout << "spatne odpovedi: " << result.wrongAnswers << "\n";
-
   return result;
 }

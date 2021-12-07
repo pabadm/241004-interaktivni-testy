@@ -6,6 +6,13 @@
     "iostream": "cpp",
     "*.tcc": "cpp",
     "fstream": "cpp",
-    "iosfwd": "cpp"
+    "iosfwd": "cpp",
+    "array": "cpp",
+    "deque": "cpp",
+    "list": "cpp",
+    "unordered_map": "cpp",
+    "vector": "cpp",
+    "initializer_list": "cpp",
+    "string_view": "cpp"
   }
 }
