@@ -2,8 +2,9 @@
 #include "test.cpp"
 #include <ctype.h>
 // #include "registration.h"    cout << user.name << " " << user.surname << " " << user.age << " " << user.sex;
+#include "statistics.cpp"
 
-void chooseTest()
+struct USER chooseTest(USER user)
 {
   for (int i = 1; i != 0;)
   {
@@ -22,40 +23,41 @@ void chooseTest()
     switch (number)
     {
     case 1:
-      test("../tests/kryptografie.txt");
+      user = test("../tests/kryptografie.txt", 1, user);
       break;
     case 2:
-      test("../tests/romanNums.txt");
+      user = test("../tests/romanNums.txt", 2, user);
       break;
     case 3:
-      test("../tests/millionaire.txt");
+      user = test("../tests/millionaire.txt", 3, user);
       break;
     case 4:
-      test("../tests/historie.txt");
+      user = test("../tests/historie.txt", 4, user);
       break;
     case 5:
-      test("../tests/geography.txt");
+      user = test("../tests/geography.txt", 5, user);
       break;
     case 6:
-      test("../tests/right.txt");
+      user = test("../tests/right.txt", 6, user);
       break;
     case 7:
       cout << "neni pristupne\n";
       break;
     case 9:
-      return;
+      return user;
       break;
     default:
       cout << "ERROR\n";
       break;
     }
+    writeStatistics(user);
     cout << "---------------------\n>1)continue?\n>";
     cin >> number;
   }
-  return;
+  return user;
 }
 
-void menu()
+struct USER menu(USER user)
 {
   for (int i = 1; i != 0;)
   {
@@ -68,17 +70,21 @@ void menu()
     switch (number)
     {
     case 1:
-      chooseTest();
+      user = chooseTest(user);
       break;
     case 2:
-      cout << "neni pristupni\n";
+      for (int num = 1; num <= 6; num++)
+      {
+        showStatistics(user, num);
+      }
+
       break;
     case 9:
-      return;
+      return user;
       break;
     default:
       cout << "ERROR\n";
-      return;
+      return user;
       break;
     }
   }

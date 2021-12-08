@@ -2,7 +2,7 @@
 
 #include "src/registration.cpp"
 #include "src/menu.cpp"
-#include "src/statistics.cpp"
+// #include "src/statistics.cpp"
 
 static USER user;
 
@@ -28,5 +28,5 @@ int main()
     cout << "Vítáme vás,\n";
     cout << user.name << " " << user.surname << "\n";
     // writeStatistics(user);
-    menu();
+    user = menu(user);
 }

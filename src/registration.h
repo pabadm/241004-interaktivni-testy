@@ -9,3 +9,4 @@ void writeToUsers(string filepath, USER user);
 int isRegistered(string filepath, USER user);
 struct USER registration(string filepath);
 string createFilename(USER user);
+struct USER readStatistics(USER user);

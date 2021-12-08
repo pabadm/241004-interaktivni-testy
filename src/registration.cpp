@@ -97,6 +97,7 @@ struct USER registration(string filepath)
 
   if (isRegisteredINT == 1)
   {
+    user = readStatistics(user);
     user.isRegisteredINT = 0; // bez chyb
     return user;
   }
@@ -130,4 +131,41 @@ string createFilename(USER user)
   filename.append(user.sex);
   filename.append(".txt");
   return filename;
+}
+
+struct USER readStatistics(USER user)
+{
+  int num, rightAnswers, wrongAnswers;
+  ifstream statsFile;
+  statsFile.open(user.filename);
+
+  statsFile >> num >> rightAnswers >> wrongAnswers;
+  user.kryptografie.rightAnswers = rightAnswers;
+  user.kryptografie.wrongAnswers = wrongAnswers;
+
+  statsFile >> num >> rightAnswers >> wrongAnswers;
+  user.romanNums.rightAnswers = rightAnswers;
+  user.romanNums.wrongAnswers = wrongAnswers;
+
+  statsFile >> num >> rightAnswers >> wrongAnswers;
+  user.millionaire.rightAnswers = rightAnswers;
+  user.millionaire.wrongAnswers = wrongAnswers;
+
+  statsFile >> num >> rightAnswers >> wrongAnswers;
+  user.historie.rightAnswers = rightAnswers;
+  user.historie.wrongAnswers = wrongAnswers;
+
+  statsFile >> num >> rightAnswers >> wrongAnswers;
+  user.geography.rightAnswers = rightAnswers;
+  user.geography.wrongAnswers = wrongAnswers;
+
+  statsFile >> num >> rightAnswers >> wrongAnswers;
+  user.right.rightAnswers = rightAnswers;
+  user.right.wrongAnswers = wrongAnswers;
+
+  statsFile.close();
+  return user;
+
+  statsFile.close();
+  return user;
 }
