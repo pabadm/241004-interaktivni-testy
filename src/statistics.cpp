@@ -4,17 +4,19 @@
 #include <fstream>
 #include "../main.h"
 
-void showStatistics(USER user, int num)
+void showStatistics(USER user, int num, int *pocetBodu)
 {
+  // int body = 0;
   switch (num)
   {
   case 1:
     if (user.kryptografie.rightAnswers != -1)
     {
-      cout << "Kryptografie:\n";
+      cout << "\tKryptografie:\n";
       cout << ">>spravné odpovědi:" << user.kryptografie.rightAnswers;
       cout << "\tšpatné odpovědi:"
            << user.kryptografie.wrongAnswers << "<<\n";
+      *pocetBodu += user.kryptografie.rightAnswers;
     }
     else
     {
@@ -24,10 +26,11 @@ void showStatistics(USER user, int num)
   case 2:
     if (user.romanNums.rightAnswers != -1)
     {
-      cout << "Římské číslice:\n";
+      cout << "\tŘímské číslice:\n";
       cout << ">>spravné odpovědi:" << user.romanNums.rightAnswers;
-      cout << "\tšpatné odpovědi:<<\n"
+      cout << "\tšpatné odpovědi:<<"
            << user.romanNums.wrongAnswers << "<<\n";
+      *pocetBodu += user.romanNums.rightAnswers;
     }
     else
     {
@@ -37,10 +40,11 @@ void showStatistics(USER user, int num)
   case 3:
     if (user.millionaire.rightAnswers != -1)
     {
-      cout << "Chcete být milionářem:\n";
+      cout << "\tChcete být milionářem:\n";
       cout << ">>spravné odpovědi:" << user.millionaire.rightAnswers;
       cout << "\tšpatné odpovědi:"
            << user.millionaire.wrongAnswers << "<<\n";
+      *pocetBodu += user.millionaire.rightAnswers;
     }
     else
     {
@@ -50,10 +54,11 @@ void showStatistics(USER user, int num)
   case 4:
     if (user.historie.rightAnswers != -1)
     {
-      cout << "Dějiny českých zemí:\n";
+      cout << "\tDějiny českých zemí:\n";
       cout << ">>spravné odpovědi:" << user.historie.rightAnswers;
       cout << "\tšpatné odpovědi:"
            << user.historie.wrongAnswers << "<<\n";
+      *pocetBodu += user.historie.rightAnswers;
     }
     else
     {
@@ -63,10 +68,11 @@ void showStatistics(USER user, int num)
   case 5:
     if (user.geography.rightAnswers != -1)
     {
-      cout << "Zeměpis Ameriky:\n";
+      cout << "\tZeměpis Ameriky:\n";
       cout << ">>spravné odpovědi:" << user.geography.rightAnswers;
       cout << "\tšpatné odpovědi:"
            << user.geography.wrongAnswers << "<<\n";
+      *pocetBodu += user.geography.rightAnswers;
     }
     else
     {
@@ -76,10 +82,11 @@ void showStatistics(USER user, int num)
   case 6:
     if (user.right.rightAnswers != -1)
     {
-      cout << "Právo ČR:\n";
+      cout << "\tPrávo ČR:\n";
       cout << ">>spravné odpovědi:" << user.right.rightAnswers;
       cout << "\tšpatné odpovědi:"
            << user.right.wrongAnswers << "<<\n";
+      *pocetBodu += user.right.rightAnswers;
     }
     else
     {
@@ -90,6 +97,7 @@ void showStatistics(USER user, int num)
     cout << "nemáte statistiku";
     break;
   }
+  // cout << "počet bodů: >" << body << "<\n";
   return;
 }
 

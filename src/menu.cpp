@@ -4,7 +4,7 @@
 // #include "registration.h"    cout << user.name << " " << user.surname << " " << user.age << " " << user.sex;
 #include "statistics.cpp"
 
-struct USER chooseTest(USER user)
+struct USER chooseTest(USER user, int mode)
 {
   for (int i = 1; i != 0;)
   {
@@ -23,22 +23,70 @@ struct USER chooseTest(USER user)
     switch (number)
     {
     case 1:
-      user = test("../tests/kryptografie.txt", 1, user);
+      if (user.kryptografie.rightAnswers >= 0)
+      {
+        cout << "tento test jste již psali\n";
+      }
+      else
+      {
+        user = test("../tests/kryptografie.txt", 1, user, mode);
+        writeStatistics(user);
+      }
       break;
     case 2:
-      user = test("../tests/romanNums.txt", 2, user);
+      if (user.romanNums.rightAnswers >= 0)
+      {
+        cout << "tento test jste již psali\n";
+      }
+      else
+      {
+        user = test("../tests/romanNums.txt", 2, user, mode);
+        writeStatistics(user);
+      }
       break;
     case 3:
-      user = test("../tests/millionaire.txt", 3, user);
+      if (user.millionaire.rightAnswers >= 0)
+      {
+        cout << "tento test jste již psali\n";
+      }
+      else
+      {
+        user = test("../tests/millionaire.txt", 3, user, mode);
+        writeStatistics(user);
+      }
       break;
     case 4:
-      user = test("../tests/historie.txt", 4, user);
+      if (user.historie.rightAnswers >= 0)
+      {
+        cout << "tento test jste již psali\n";
+      }
+      else
+      {
+        user = test("../tests/historie.txt", 4, user, mode);
+        writeStatistics(user);
+      }
       break;
     case 5:
-      user = test("../tests/geography.txt", 5, user);
+      if (user.geography.rightAnswers >= 0)
+      {
+        cout << "tento test jste již psali\n";
+      }
+      else
+      {
+        user = test("../tests/geography.txt", 5, user, mode);
+        writeStatistics(user);
+      }
       break;
     case 6:
-      user = test("../tests/right.txt", 6, user);
+      if (user.right.rightAnswers >= 0)
+      {
+        cout << "tento test jste již psali\n";
+      }
+      else
+      {
+        user = test("../tests/right.txt", 6, user, mode);
+        writeStatistics(user);
+      }
       break;
     case 7:
       cout << "neni pristupne\n";
@@ -50,7 +98,7 @@ struct USER chooseTest(USER user)
       cout << "ERROR\n";
       break;
     }
-    writeStatistics(user);
+    // writeStatistics(user);
     cout << "---------------------\n>1)continue?\n>";
     cin >> number;
   }
@@ -59,25 +107,44 @@ struct USER chooseTest(USER user)
 
 struct USER menu(USER user)
 {
+  string actSex;
   for (int i = 1; i != 0;)
   {
     int number = 0;
     cout << "---------------------\n";
     cout << "1) Vyplnit test\n";
-    cout << "2) Statistika\n";
+    cout << "2) Příprava k testu\n";
+    cout << "3) Statistika\n";
+    cout << "4) Učet\n";
     cout << "---------------------\n>";
     cin >> number;
     switch (number)
     {
     case 1:
-      user = chooseTest(user);
+      user = chooseTest(user, 0);
+      // 0 test na body
       break;
     case 2:
+      user = chooseTest(user, 1);
+      //1 - priprava k testu
+      break;
+    case 3:
+      int pocetBodu;
       for (int num = 1; num <= 6; num++)
       {
-        showStatistics(user, num);
+        showStatistics(user, num, &pocetBodu);
       }
+      cout << "---------------------\n";
+      cout << "Počet Bodů >" << pocetBodu << "<\n";
 
+      break;
+    case 4:
+      cout << "---------------------\n";
+      user.sex = 1 ? actSex = "mužský" : actSex = "ženský";
+      cout << user.name << "\n"
+           << user.surname << "\n"
+           << user.age << " let\n"
+           << actSex << "\n";
       break;
     case 9:
       return user;
