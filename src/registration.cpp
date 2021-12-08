@@ -26,20 +26,28 @@ int isRegistered(string filepath, USER user)
     if (name == user.name && surname == user.surname &&
         age == user.age && sex == user.sex)
     {
+      cout << "---------------------\n";
       cout << "JSTE REGISTROVANI\nZadejte svoje heslo\n>";
-      cin >> enteredPassword;
-      if (enteredPassword == password)
+      for (int b = 0; b != 1;)
       {
-        isRegisteredINT = 1;
-        i = 0;
-        break;
+        cin >> enteredPassword;
+        if (enteredPassword == password)
+        {
+          isRegisteredINT = 1;
+          i = 0;
+          b = 1;
+          break;
+        }
+        else
+        {
+          cout << "---------------------\n";
+          cout << "Nespravne heslo\nZadejte svoje heslo\n";
+          b = 0;
+          isRegisteredINT = 0;
+          continue;
+        }
       }
-      else
-      {
-        //cout << "Nespravne heslo\n";
-        return 2;
-      }
-      isRegisteredINT = 1; //JSTE REGISTROVANI
+      //JSTE REGISTROVANI
       i = 0;
       break;
     }
@@ -138,34 +146,36 @@ struct USER readStatistics(USER user)
   int num, rightAnswers, wrongAnswers;
   ifstream statsFile;
   statsFile.open(user.filename);
+  if (statsFile.is_open())
+  {
+    statsFile >> num >> rightAnswers >> wrongAnswers;
+    user.kryptografie.rightAnswers = rightAnswers;
+    user.kryptografie.wrongAnswers = wrongAnswers;
 
-  statsFile >> num >> rightAnswers >> wrongAnswers;
-  user.kryptografie.rightAnswers = rightAnswers;
-  user.kryptografie.wrongAnswers = wrongAnswers;
+    statsFile >> num >> rightAnswers >> wrongAnswers;
+    user.romanNums.rightAnswers = rightAnswers;
+    user.romanNums.wrongAnswers = wrongAnswers;
 
-  statsFile >> num >> rightAnswers >> wrongAnswers;
-  user.romanNums.rightAnswers = rightAnswers;
-  user.romanNums.wrongAnswers = wrongAnswers;
+    statsFile >> num >> rightAnswers >> wrongAnswers;
+    user.millionaire.rightAnswers = rightAnswers;
+    user.millionaire.wrongAnswers = wrongAnswers;
 
-  statsFile >> num >> rightAnswers >> wrongAnswers;
-  user.millionaire.rightAnswers = rightAnswers;
-  user.millionaire.wrongAnswers = wrongAnswers;
+    statsFile >> num >> rightAnswers >> wrongAnswers;
+    user.historie.rightAnswers = rightAnswers;
+    user.historie.wrongAnswers = wrongAnswers;
 
-  statsFile >> num >> rightAnswers >> wrongAnswers;
-  user.historie.rightAnswers = rightAnswers;
-  user.historie.wrongAnswers = wrongAnswers;
+    statsFile >> num >> rightAnswers >> wrongAnswers;
+    user.geography.rightAnswers = rightAnswers;
+    user.geography.wrongAnswers = wrongAnswers;
 
-  statsFile >> num >> rightAnswers >> wrongAnswers;
-  user.geography.rightAnswers = rightAnswers;
-  user.geography.wrongAnswers = wrongAnswers;
+    statsFile >> num >> rightAnswers >> wrongAnswers;
+    user.right.rightAnswers = rightAnswers;
+    user.right.wrongAnswers = wrongAnswers;
 
-  statsFile >> num >> rightAnswers >> wrongAnswers;
-  user.right.rightAnswers = rightAnswers;
-  user.right.wrongAnswers = wrongAnswers;
+    statsFile.close();
+    return user;
 
-  statsFile.close();
-  return user;
-
-  statsFile.close();
+    statsFile.close();
+  }
   return user;
 }

@@ -1,7 +1,6 @@
 #include "menu.h"
 #include "test.cpp"
 #include <ctype.h>
-// #include "registration.h"    cout << user.name << " " << user.surname << " " << user.age << " " << user.sex;
 #include "statistics.cpp"
 
 struct USER chooseTest(USER user, int mode)
@@ -105,7 +104,7 @@ struct USER chooseTest(USER user, int mode)
   return user;
 }
 
-struct USER menu(USER user)
+void menu(USER user)
 {
   string actSex;
   for (int i = 1; i != 0;)
@@ -116,6 +115,7 @@ struct USER menu(USER user)
     cout << "2) Příprava k testu\n";
     cout << "3) Statistika\n";
     cout << "4) Učet\n";
+    cout << "5) Log Out\n";
     cout << "---------------------\n>";
     cin >> number;
     switch (number)
@@ -130,12 +130,15 @@ struct USER menu(USER user)
       break;
     case 3:
       int pocetBodu;
+      cout << "---------------------\n";
       for (int num = 1; num <= 6; num++)
       {
         showStatistics(user, num, &pocetBodu);
       }
       cout << "---------------------\n";
       cout << "Počet Bodů >" << pocetBodu << "<\n";
+      cout << "---------------------\n>1)continue?\n>";
+      cin >> number;
 
       break;
     case 4:
@@ -145,13 +148,14 @@ struct USER menu(USER user)
            << user.surname << "\n"
            << user.age << " let\n"
            << actSex << "\n";
+      cout << "---------------------\n>1)continue?\n>";
+      cin >> number;
       break;
-    case 9:
-      return user;
+    case 5:
+      return;
       break;
     default:
-      cout << "ERROR\n";
-      return user;
+      number = 1;
       break;
     }
   }
