@@ -11,7 +11,9 @@ void chooseTest()
     cout << "---------------------\n";
     cout << "1)Kryptografie\n";
     cout << "2)Římské číslice\n";
-    cout << "3)///////\n";
+    cout << "3)Chcete být milionářem\n";
+    cout << "4)Dějiny českých zemí\n";
+    cout << "5)///////\n";
     cout << "9)GO BACK\n";
     cout << "---------------------\n>";
     cin >> number;
@@ -24,6 +26,12 @@ void chooseTest()
       test("../tests/romanNums.txt");
       break;
     case 3:
+      test("../tests/millionaire.txt");
+      break;
+    case 4:
+      test("../tests/historie.txt");
+      break;
+    case 5:
       cout << "neni pristupne\n";
       break;
     case 9:

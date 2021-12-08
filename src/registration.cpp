@@ -14,7 +14,7 @@ int isRegistered(string filepath, USER user)
 {
   string enteredPassword;
   string name, surname, password;
-  int age, sex;
+  string age, sex;
   ifstream users;
 
   int isRegisteredINT = 0;
@@ -58,7 +58,7 @@ struct USER registration(string filepath)
 {
   USER user;
   string name, surname, password;
-  int age, sex;
+  string age, sex;
 
   cout
       << "zadejte jmeno\n>";
@@ -67,7 +67,7 @@ struct USER registration(string filepath)
   cin >> surname;
   cout << "zadejte vas vek \n>";
   cin >> age;
-  if (age <= 0)
+  if (stoi(age) <= 0)
   {
     cout << "byl zadan nepravidelni vek \n";
     user.isRegisteredINT = 1; //chyba
@@ -75,7 +75,7 @@ struct USER registration(string filepath)
   }
   cout << "zadejte pohlavi\n muz - 1 zena - 2\n>";
   cin >> sex;
-  if (sex != 1 && sex != 2)
+  if (stoi(sex) != 1 && stoi(sex) != 2)
   {
     cout << "pohlavi bylo zadano nepravidelne \n";
     user.isRegisteredINT = 1; //chyba
@@ -91,6 +91,7 @@ struct USER registration(string filepath)
   user.surname = surname;
   user.age = age;
   user.sex = sex;
+  user.filename = createFilename(user);
 
   int isRegisteredINT = isRegistered(filepath, user);
 
@@ -115,4 +116,18 @@ struct USER registration(string filepath)
 
   user.isRegisteredINT = 0; //bez chyb
   return user;
+}
+//filename pro statistiku
+string createFilename(USER user)
+{
+  string filename = "../statistics/";
+  filename.append(user.name);
+  filename.append("_");
+  filename.append(user.surname);
+  filename.append("_");
+  filename.append(user.age);
+  filename.append("_");
+  filename.append(user.sex);
+  filename.append(".txt");
+  return filename;
 }

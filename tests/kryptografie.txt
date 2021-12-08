@@ -7,3 +7,36 @@ odpověď je číslo
 Otestujte Fermatovým testem číslo 57 pomocí základu 3
 odpověď je true/false
 true
+Vypočítejte (-3)mod 7.
+odpověď je číslo
+4
+Vypočítejte hodnotu eulerovy funkce z čísla 221
+odpověď je číslo
+192
+Vypočítejte hodnotu eulerovy funkce z čísla 441
+odpověď je číslo
+252
+Určete kolik generátorů je v grupě velikosti 17.
+odpověď je číslo
+8
+Určete řád prvku 9 z grupy 17.
+odpověď je číslo
+8
+Vypočítejte hodnotu generátoru menší než 9 pro grupu Z17
+odpověď je číslo
+3
+Flag je hodnota všech generátorů větších než 9 grupy Z17. Generátory oddělte čárkou.
+odpověď je ve tvaru (X1,X2,...,Xn)
+10,11,12,14
+Z kolika kroků bude Lucas-Lehmerův test složen v případě čísla 127.
+odpověď je číslo
+5
+Otestujte M-R testem číslo 89 pomocí základu 7.
+odpověď je hodnota výsledku pro i=1.
+34
+Máme definované parametry DH protokolu g=13; p=67. Strana A si vybrala jako tajnou hodnotu číslo 15. Strana B si vybrala jako tajnou hodnotu číslo 50. Flag je klíč, který si mezi sebou strany domluvily.
+odpověď je číslo
+22
+Pomocí algoritmu Square&Multiply vypočítejte (46^57) mod 13.
+odpověď je číslo
+8
