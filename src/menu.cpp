@@ -13,7 +13,9 @@ void chooseTest()
     cout << "2)Římské číslice\n";
     cout << "3)Chcete být milionářem\n";
     cout << "4)Dějiny českých zemí\n";
-    cout << "5)///////\n";
+    cout << "5)Zeměpis Ameriky\n";
+    cout << "6)Právo ČR\n";
+    cout << "7)///////\n";
     cout << "9)GO BACK\n";
     cout << "---------------------\n>";
     cin >> number;
@@ -32,6 +34,12 @@ void chooseTest()
       test("../tests/historie.txt");
       break;
     case 5:
+      test("../tests/geography.txt");
+      break;
+    case 6:
+      test("../tests/right.txt");
+      break;
+    case 7:
       cout << "neni pristupne\n";
       break;
     case 9:
@@ -43,8 +51,8 @@ void chooseTest()
     }
     cout << "---------------------\n>1)continue?\n>";
     cin >> number;
-    return;
   }
+  return;
 }
 
 void menu()
